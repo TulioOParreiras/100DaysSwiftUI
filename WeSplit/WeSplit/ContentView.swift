@@ -10,19 +10,31 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var checkAmount = ""
-    @State private var numberOfPeople = 2
+//    @State private var numberOfPeople = 2
     @State private var tipPercentage = 2
+    @State private var persons = ""
     
     let tipPercentages = [10, 15, 20, 25, 0]
     
-    var totalPerPerson: Double {
-        // Calculate the total per person here
-        let peopleCount = Double(self.numberOfPeople + 2)
+    var tipValue: Double {
         let tipSelection = Double(self.tipPercentages[self.tipPercentage])
         let orderAmount = Double(self.checkAmount) ?? 0
         
-        let tipValue = orderAmount / 100 * tipSelection
-        let grandTotal = orderAmount + tipValue
+        return orderAmount / 100 * tipSelection
+    }
+    
+    var totalAmount: Double {
+        let orderAmount = Double(self.checkAmount) ?? 0
+        
+        return self.tipValue + orderAmount
+    }
+    
+    var totalPerPerson: Double {
+        // Calculate the total per person here
+        let peopleCount = Double(self.persons) ?? 0
+        
+        let tipValue = self.tipValue
+        let grandTotal = self.totalAmount
         let amountPerPerson = grandTotal / peopleCount
         
         return amountPerPerson
@@ -31,15 +43,23 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section {
+                Section(header: Text("Amount")) {
                     TextField("Amount", text: self.$checkAmount)
                         .keyboardType(.decimalPad)
-                    
-                    Picker("Number of people", selection: self.$numberOfPeople) {
-                        ForEach(2 ..< 100) {
-                            Text("\($0) people")
-                        }
-                    }
+//
+////                    Picker("Number of people", selection: self.$numberOfPeople) {
+////                        ForEach(2 ..< 100) {
+////                            Text("\($0) people")
+////                        }
+////                    }
+//
+//                    TextField("Number of people", text: self.$persons)
+//                        .keyboardType(.numberPad)
+                }
+                
+                Section(header: Text("Number of people")) {
+                    TextField("Number of people", text: self.$persons)
+                        .keyboardType(.numberPad)
                 }
                 
                 Section(header: Text("How much tip do you want to leave?")) {
@@ -52,7 +72,13 @@ struct ContentView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
                 
-                Section {
+                Section(header: Text("Total amount")) {
+                    Text("Amount: $\(Double(self.checkAmount) ?? 0, specifier: "%.2f")")
+                    Text("Tip: $\(self.tipValue, specifier: "%.2f")")
+                    Text("Total: $\(self.totalAmount, specifier: "%.2f")")
+                }
+                
+                Section(header: Text("Amount per person")) {
                     Text("$\(totalPerPerson, specifier: "%.2f")")
                 }
             }
