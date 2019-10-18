@@ -9,9 +9,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let count = 5
+    
     var body: some View {
-        Text("Hello World")
+        VStack {
+            ForEach(0 ..< self.count) {_ in
+                HStack {
+                    ForEach(0 ..< self.count) { _ in
+                        Text("1")
+                    }
+                }
+            }
+        }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
