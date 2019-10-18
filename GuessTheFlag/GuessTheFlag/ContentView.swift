@@ -23,8 +23,11 @@ struct ContentView: View {
 //            }
 //        }
         ZStack {
-            Color.red.edgesIgnoringSafeArea(.all)
+//            Color.red.frame(width: 200, height: 200)
+//            Color(red: 1, green: 0.8, blue: 0)
+//            Color.red.edgesIgnoringSafeArea(.all)
             Text("Your content")
+            .background(Color.red)
         }
     }
     
