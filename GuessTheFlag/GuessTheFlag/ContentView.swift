@@ -13,14 +13,18 @@ struct ContentView: View {
     let count = 5
     
     var body: some View {
-        VStack {
-            ForEach(0 ..< self.count) {_ in
-                HStack {
-                    ForEach(0 ..< self.count) { _ in
-                        Text("1")
-                    }
-                }
-            }
+//        VStack {
+//            ForEach(0 ..< self.count) {_ in
+//                HStack {
+//                    ForEach(0 ..< self.count) { _ in
+//                        Text("1")
+//                    }
+//                }
+//            }
+//        }
+        ZStack {
+            Color.red.edgesIgnoringSafeArea(.all)
+            Text("Your content")
         }
     }
     
