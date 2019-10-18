@@ -22,13 +22,31 @@ struct ContentView: View {
 //                }
 //            }
 //        }
-        ZStack {
-//            Color.red.frame(width: 200, height: 200)
-//            Color(red: 1, green: 0.8, blue: 0)
-//            Color.red.edgesIgnoringSafeArea(.all)
-            Text("Your content")
-            .background(Color.red)
+        
+//        ZStack {
+////            Color.red.frame(width: 200, height: 200)
+////            Color(red: 1, green: 0.8, blue: 0)
+////            Color.red.edgesIgnoringSafeArea(.all)
+//            Text("Your content")
+//            .background(Color.red)
+//        }
+        
+//        LinearGradient(gradient: Gradient(colors: [.white, .black]), startPoint: .top, endPoint: .bottom)
+//        RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .center, startRadius: 20, endRadius: 200)
+//        AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center)
+        
+        Button(action: {
+            print("Button was tapped")
+        }) {
+            HStack(spacing: 10) {
+                Image(systemName: "pencil")
+                Text("Edit")
+            }
+            .foregroundColor(.purple)
         }
+//        Button("Tap me!") {
+//            print("Button was tapped")
+//        }
     }
     
 }
