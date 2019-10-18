@@ -10,6 +10,9 @@ import SwiftUI
 
 struct ContentView: View {
     
+    var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"]
+    var correctAnswer = Int.random(in: 0...2)
+    
     @State private var showingAlert = false
     
     let count = 5
@@ -49,12 +52,34 @@ struct ContentView: View {
 //        Button("Tap me!") {
 //            print("Button was tapped")
 //        }
-        Button("Show Alert") {
-            self.showingAlert = true
-        }.alert(isPresented: $showingAlert) {
-            Alert(title: Text("Hello SwiftUI"), message: Text("This is some detail message"), dismissButton: .default(Text("OK")))
-        }
         
+//        Button("Show Alert") {
+//            self.showingAlert = true
+//        }.alert(isPresented: $showingAlert) {
+//            Alert(title: Text("Hello SwiftUI"), message: Text("This is some detail message"), dismissButton: .default(Text("OK")))
+//        }
+        
+        ZStack{
+            Color.blue.edgesIgnoringSafeArea(.all)
+            
+            VStack(spacing: 30){
+                VStack {
+                    Text("Tap the flag of")
+                    Text(countries[correctAnswer])
+                        .foregroundColor(.white)
+                }
+                
+                ForEach(0 ..< 3) { number in
+                    Button(action: {
+                        // flad was tapped
+                    }) {
+                        Image(self.countries[number])
+                            .renderingMode(.original)
+                    }
+                }
+                Spacer()
+            }
+        }
     }
     
 }
