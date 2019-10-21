@@ -13,6 +13,7 @@ struct ContentView: View {
 //    @State private var numberOfPeople = 2
     @State private var tipPercentage = 2
     @State private var persons = ""
+    @State private var isZeroTip = false
     
     let tipPercentages = [10, 15, 20, 25, 0]
     
@@ -40,6 +41,11 @@ struct ContentView: View {
         return amountPerPerson
     }
     
+    var hasTip: Bool {
+        let tip = self.tipPercentages[self.tipPercentage]
+        return tip > 0
+    }
+    
     var body: some View {
         NavigationView {
             Form {
@@ -63,7 +69,6 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("How much tip do you want to leave?")) {
-                    
                     Picker("Tip percentage", selection: self.$tipPercentage) {
                         ForEach(0 ..< self.tipPercentages.count) {
                             Text("\(self.tipPercentages[$0])%")
@@ -75,6 +80,7 @@ struct ContentView: View {
                 Section(header: Text("Total amount")) {
                     Text("Amount: $\(Double(self.checkAmount) ?? 0, specifier: "%.2f")")
                     Text("Tip: $\(self.tipValue, specifier: "%.2f")")
+                        .foregroundColor(self.hasTip ? .blue : .red)
                     Text("Total: $\(self.totalAmount, specifier: "%.2f")")
                 }
                 

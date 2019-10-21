@@ -38,11 +38,7 @@ struct ContentView: View {
                     Button(action: {
                         self.flagTapped(number)
                     }) {
-                        Image(self.countries[number])
-                            .renderingMode(.original)
-                            .clipShape(Capsule())
-                            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-                            .shadow(color: .black, radius: 2)
+                        FlagImage(named: self.countries[number])
                     }
                 }
                 
@@ -82,5 +78,16 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct FlagImage: View {
+    var named: String
+    var body: some View {
+        Image(self.named)
+        .renderingMode(.original)
+        .clipShape(Capsule())
+        .overlay(Capsule().stroke(Color.black, lineWidth: 1))
+        .shadow(color: .black, radius: 2)
     }
 }
