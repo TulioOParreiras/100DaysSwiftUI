@@ -77,10 +77,20 @@ struct ContentView: View {
 ////            }
 //        }
         
-        Color.red
-        .frame(width: 300, height: 300)
-        .largeTitle(with: "SwiftUI")
+//        Color.red
+//        .frame(width: 300, height: 300)
+//        .largeTitle(with: "SwiftUI")
+        
+//        VStack {
+//            ForEach(self.agents, id: \.self) {
+//                Text($0)
+//            }
+//        }
+        
+        AgreementsView()
     }
+    
+    let agents = ["Cyril", "Lana", "Pam", "Sterling"]
 }
 
 struct GridStack<Content: View>: View {
@@ -185,3 +195,43 @@ extension View {
     }
 }
 
+struct AgreementsView: View {
+    
+    @State var agreedToTerms = false
+    @State var agreedToPrivacyPolicy = false
+    @State var agreedToEmails = false
+    
+    var body: some View {
+        let agreedToAll = Binding<Bool>(
+            get: {
+                self.agreedToTerms && self.agreedToPrivacyPolicy && self.agreedToEmails
+            },
+            set: {
+                self.agreedToTerms = $0
+                self.agreedToPrivacyPolicy = $0
+                self.agreedToEmails = $0
+            }
+        )
+
+        return VStack {
+            Toggle(isOn: $agreedToTerms) {
+                Text("Agree to terms")
+            }
+
+            Toggle(isOn: $agreedToPrivacyPolicy) {
+                Text("Agree to privacy policy")
+            }
+
+            Toggle(isOn: $agreedToEmails) {
+                Text("Agree to receive shipping emails")
+            }
+
+            Toggle(isOn: agreedToAll) {
+                Text("Agree to all")
+            }
+        }
+    }
+    
+    
+    
+}
