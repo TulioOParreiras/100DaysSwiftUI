@@ -36,4 +36,8 @@ struct Mission: Codable, Identifiable {
             return "N/A"
         }
     }
+    
+    var crewNames: String {
+        return self.crew.compactMap({ $0.name }).joined(separator: ", ")
+    }
 }

@@ -12,10 +12,12 @@ struct ContentView: View {
     let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
     let missions: [Mission] = Bundle.main.decode("missions.json")
     
+    @State private var showingDate = true
+    
     var body: some View {
         NavigationView {
             List(missions) { mission in
-                NavigationLink(destination: MissionView(mission: mission, astronauts: self.astronauts)) {
+                NavigationLink(destination: MissionView(mission: mission, astronauts: self.astronauts, missions: self.missions)) {
                     Image(mission.image)
                     .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -23,11 +25,18 @@ struct ContentView: View {
                     
                     VStack(alignment: .leading) {
                         Text(mission.displayName)
-                        Text(mission.formattedLaunchDate)
+                        if self.showingDate {
+                            Text(mission.formattedLaunchDate)
+                        } else {
+                            Text(mission.crewNames)
+                        }
                     }
                 }
             }
         .navigationBarTitle("Moonshot")
+            .navigationBarItems(trailing: Button((self.showingDate ? "Crew" : "Date")) {
+                self.showingDate.toggle()
+            })
         }
     }
     
