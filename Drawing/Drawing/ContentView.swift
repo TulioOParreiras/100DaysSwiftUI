@@ -247,6 +247,7 @@ struct ContentView: View {
 //    @State private var amount: CGFloat = 0.0
 //
     @State private var colorCycle = 0.0
+    
 //
 //    @State private var petalOffset = -20.0
 //    @State private var petalWidth = 100.0
