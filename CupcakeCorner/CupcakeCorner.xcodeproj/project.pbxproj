@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC3BF1F42386AC3800507332 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BF1F32386AC3800507332 /* AppDelegate.swift */; };
+		FC3BF1F62386AC3800507332 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BF1F52386AC3800507332 /* SceneDelegate.swift */; };
+		FC3BF1F82386AC3800507332 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BF1F72386AC3800507332 /* ContentView.swift */; };
+		FC3BF1FA2386AC3C00507332 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC3BF1F92386AC3C00507332 /* Assets.xcassets */; };
+		FC3BF1FD2386AC3C00507332 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC3BF1FC2386AC3C00507332 /* Preview Assets.xcassets */; };
+		FC3BF2002386AC3C00507332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC3BF1FE2386AC3C00507332 /* LaunchScreen.storyboard */; };
+		FC3BF20B2386AC3C00507332 /* CupcakeCornerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BF20A2386AC3C00507332 /* CupcakeCornerTests.swift */; };
+		FC3BF2162386AC3C00507332 /* CupcakeCornerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BF2152386AC3C00507332 /* CupcakeCornerUITests.swift */; };
+		FC3BF2242386BCA100507332 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BF2232386BCA100507332 /* Order.swift */; };
+		FC3BF2262386C02900507332 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BF2252386C02900507332 /* AddressView.swift */; };
+		FC3BF2282386C1DF00507332 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BF2272386C1DF00507332 /* CheckoutView.swift */; };
+		FC3BF22A2386D44100507332 /* NewOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3BF2292386D44100507332 /* NewOrder.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC3BF2072386AC3C00507332 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC3BF1E82386AC3800507332 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC3BF1EF2386AC3800507332;
+			remoteInfo = CupcakeCorner;
+		};
+		FC3BF2122386AC3C00507332 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC3BF1E82386AC3800507332 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC3BF1EF2386AC3800507332;
+			remoteInfo = CupcakeCorner;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FC3BF1F02386AC3800507332 /* CupcakeCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupcakeCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC3BF1F32386AC3800507332 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FC3BF1F52386AC3800507332 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FC3BF1F72386AC3800507332 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FC3BF1F92386AC3C00507332 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC3BF1FC2386AC3C00507332 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FC3BF1FF2386AC3C00507332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FC3BF2012386AC3C00507332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC3BF2062386AC3C00507332 /* CupcakeCornerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CupcakeCornerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC3BF20A2386AC3C00507332 /* CupcakeCornerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupcakeCornerTests.swift; sourceTree = "<group>"; };
+		FC3BF20C2386AC3C00507332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC3BF2112386AC3C00507332 /* CupcakeCornerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CupcakeCornerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC3BF2152386AC3C00507332 /* CupcakeCornerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupcakeCornerUITests.swift; sourceTree = "<group>"; };
+		FC3BF2172386AC3C00507332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC3BF2232386BCA100507332 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		FC3BF2252386C02900507332 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		FC3BF2272386C1DF00507332 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		FC3BF2292386D44100507332 /* NewOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrder.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC3BF1ED2386AC3800507332 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC3BF2032386AC3C00507332 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC3BF20E2386AC3C00507332 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC3BF1E72386AC3800507332 = {
+			isa = PBXGroup;
+			children = (
+				FC3BF1F22386AC3800507332 /* CupcakeCorner */,
+				FC3BF2092386AC3C00507332 /* CupcakeCornerTests */,
+				FC3BF2142386AC3C00507332 /* CupcakeCornerUITests */,
+				FC3BF1F12386AC3800507332 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FC3BF1F12386AC3800507332 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC3BF1F02386AC3800507332 /* CupcakeCorner.app */,
+				FC3BF2062386AC3C00507332 /* CupcakeCornerTests.xctest */,
+				FC3BF2112386AC3C00507332 /* CupcakeCornerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC3BF1F22386AC3800507332 /* CupcakeCorner */ = {
+			isa = PBXGroup;
+			children = (
+				FC3BF1F32386AC3800507332 /* AppDelegate.swift */,
+				FC3BF1F52386AC3800507332 /* SceneDelegate.swift */,
+				FC3BF1F72386AC3800507332 /* ContentView.swift */,
+				FC3BF2232386BCA100507332 /* Order.swift */,
+				FC3BF2292386D44100507332 /* NewOrder.swift */,
+				FC3BF2252386C02900507332 /* AddressView.swift */,
+				FC3BF2272386C1DF00507332 /* CheckoutView.swift */,
+				FC3BF1F92386AC3C00507332 /* Assets.xcassets */,
+				FC3BF1FE2386AC3C00507332 /* LaunchScreen.storyboard */,
+				FC3BF2012386AC3C00507332 /* Info.plist */,
+				FC3BF1FB2386AC3C00507332 /* Preview Content */,
+			);
+			path = CupcakeCorner;
+			sourceTree = "<group>";
+		};
+		FC3BF1FB2386AC3C00507332 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FC3BF1FC2386AC3C00507332 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FC3BF2092386AC3C00507332 /* CupcakeCornerTests */ = {
+			isa = PBXGroup;
+			children = (
+				FC3BF20A2386AC3C00507332 /* CupcakeCornerTests.swift */,
+				FC3BF20C2386AC3C00507332 /* Info.plist */,
+			);
+			path = CupcakeCornerTests;
+			sourceTree = "<group>";
+		};
+		FC3BF2142386AC3C00507332 /* CupcakeCornerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FC3BF2152386AC3C00507332 /* CupcakeCornerUITests.swift */,
+				FC3BF2172386AC3C00507332 /* Info.plist */,
+			);
+			path = CupcakeCornerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC3BF1EF2386AC3800507332 /* CupcakeCorner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC3BF21A2386AC3C00507332 /* Build configuration list for PBXNativeTarget "CupcakeCorner" */;
+			buildPhases = (
+				FC3BF1EC2386AC3800507332 /* Sources */,
+				FC3BF1ED2386AC3800507332 /* Frameworks */,
+				FC3BF1EE2386AC3800507332 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CupcakeCorner;
+			productName = CupcakeCorner;
+			productReference = FC3BF1F02386AC3800507332 /* CupcakeCorner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FC3BF2052386AC3C00507332 /* CupcakeCornerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC3BF21D2386AC3C00507332 /* Build configuration list for PBXNativeTarget "CupcakeCornerTests" */;
+			buildPhases = (
+				FC3BF2022386AC3C00507332 /* Sources */,
+				FC3BF2032386AC3C00507332 /* Frameworks */,
+				FC3BF2042386AC3C00507332 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC3BF2082386AC3C00507332 /* PBXTargetDependency */,
+			);
+			name = CupcakeCornerTests;
+			productName = CupcakeCornerTests;
+			productReference = FC3BF2062386AC3C00507332 /* CupcakeCornerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FC3BF2102386AC3C00507332 /* CupcakeCornerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC3BF2202386AC3C00507332 /* Build configuration list for PBXNativeTarget "CupcakeCornerUITests" */;
+			buildPhases = (
+				FC3BF20D2386AC3C00507332 /* Sources */,
+				FC3BF20E2386AC3C00507332 /* Frameworks */,
+				FC3BF20F2386AC3C00507332 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC3BF2132386AC3C00507332 /* PBXTargetDependency */,
+			);
+			name = CupcakeCornerUITests;
+			productName = CupcakeCornerUITests;
+			productReference = FC3BF2112386AC3C00507332 /* CupcakeCornerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC3BF1E82386AC3800507332 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = Usemobile;
+				TargetAttributes = {
+					FC3BF1EF2386AC3800507332 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					FC3BF2052386AC3C00507332 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = FC3BF1EF2386AC3800507332;
+					};
+					FC3BF2102386AC3C00507332 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = FC3BF1EF2386AC3800507332;
+					};
+				};
+			};
+			buildConfigurationList = FC3BF1EB2386AC3800507332 /* Build configuration list for PBXProject "CupcakeCorner" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FC3BF1E72386AC3800507332;
+			productRefGroup = FC3BF1F12386AC3800507332 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FC3BF1EF2386AC3800507332 /* CupcakeCorner */,
+				FC3BF2052386AC3C00507332 /* CupcakeCornerTests */,
+				FC3BF2102386AC3C00507332 /* CupcakeCornerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC3BF1EE2386AC3800507332 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC3BF2002386AC3C00507332 /* LaunchScreen.storyboard in Resources */,
+				FC3BF1FD2386AC3C00507332 /* Preview Assets.xcassets in Resources */,
+				FC3BF1FA2386AC3C00507332 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC3BF2042386AC3C00507332 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC3BF20F2386AC3C00507332 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC3BF1EC2386AC3800507332 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC3BF1F42386AC3800507332 /* AppDelegate.swift in Sources */,
+				FC3BF1F62386AC3800507332 /* SceneDelegate.swift in Sources */,
+				FC3BF2282386C1DF00507332 /* CheckoutView.swift in Sources */,
+				FC3BF2242386BCA100507332 /* Order.swift in Sources */,
+				FC3BF1F82386AC3800507332 /* ContentView.swift in Sources */,
+				FC3BF2262386C02900507332 /* AddressView.swift in Sources */,
+				FC3BF22A2386D44100507332 /* NewOrder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC3BF2022386AC3C00507332 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC3BF20B2386AC3C00507332 /* CupcakeCornerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC3BF20D2386AC3C00507332 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC3BF2162386AC3C00507332 /* CupcakeCornerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FC3BF2082386AC3C00507332 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC3BF1EF2386AC3800507332 /* CupcakeCorner */;
+			targetProxy = FC3BF2072386AC3C00507332 /* PBXContainerItemProxy */;
+		};
+		FC3BF2132386AC3C00507332 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC3BF1EF2386AC3800507332 /* CupcakeCorner */;
+			targetProxy = FC3BF2122386AC3C00507332 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FC3BF1FE2386AC3C00507332 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC3BF1FF2386AC3C00507332 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FC3BF2182386AC3C00507332 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FC3BF2192386AC3C00507332 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC3BF21B2386AC3C00507332 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CupcakeCorner/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CupcakeCorner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.usemobile.CupcakeCorner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FC3BF21C2386AC3C00507332 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CupcakeCorner/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CupcakeCorner/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.usemobile.CupcakeCorner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FC3BF21E2386AC3C00507332 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CupcakeCornerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.usemobile.CupcakeCornerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CupcakeCorner.app/CupcakeCorner";
+			};
+			name = Debug;
+		};
+		FC3BF21F2386AC3C00507332 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CupcakeCornerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.usemobile.CupcakeCornerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CupcakeCorner.app/CupcakeCorner";
+			};
+			name = Release;
+		};
+		FC3BF2212386AC3C00507332 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CupcakeCornerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.usemobile.CupcakeCornerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CupcakeCorner;
+			};
+			name = Debug;
+		};
+		FC3BF2222386AC3C00507332 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CupcakeCornerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.usemobile.CupcakeCornerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CupcakeCorner;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC3BF1EB2386AC3800507332 /* Build configuration list for PBXProject "CupcakeCorner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC3BF2182386AC3C00507332 /* Debug */,
+				FC3BF2192386AC3C00507332 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC3BF21A2386AC3C00507332 /* Build configuration list for PBXNativeTarget "CupcakeCorner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC3BF21B2386AC3C00507332 /* Debug */,
+				FC3BF21C2386AC3C00507332 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC3BF21D2386AC3C00507332 /* Build configuration list for PBXNativeTarget "CupcakeCornerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC3BF21E2386AC3C00507332 /* Debug */,
+				FC3BF21F2386AC3C00507332 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC3BF2202386AC3C00507332 /* Build configuration list for PBXNativeTarget "CupcakeCornerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC3BF2212386AC3C00507332 /* Debug */,
+				FC3BF2222386AC3C00507332 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC3BF1E82386AC3800507332 /* Project object */;
+}
