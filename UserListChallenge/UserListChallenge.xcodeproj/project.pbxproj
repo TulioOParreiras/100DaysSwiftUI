@@ -16,10 +16,12 @@
 		FC069461238C764E00A3BA5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC06945F238C764E00A3BA5D /* LaunchScreen.storyboard */; };
 		FC06946C238C764E00A3BA5D /* UserListChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC06946B238C764E00A3BA5D /* UserListChallengeTests.swift */; };
 		FC069477238C764E00A3BA5D /* UserListChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069476238C764E00A3BA5D /* UserListChallengeUITests.swift */; };
-		FC069485238C768000A3BA5D /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069484238C768000A3BA5D /* Friend.swift */; };
-		FC069487238C76A100A3BA5D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069486238C76A100A3BA5D /* User.swift */; };
 		FC069489238C78FD00A3BA5D /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC069488238C78FD00A3BA5D /* UserView.swift */; };
 		FC656D63238D534700653795 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC656D62238D534700653795 /* UserDetailsView.swift */; };
+		FC656D6C238D5FFB00653795 /* FriendEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC656D66238D5FFB00653795 /* FriendEntity+CoreDataClass.swift */; };
+		FC656D6D238D5FFB00653795 /* FriendEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC656D67238D5FFB00653795 /* FriendEntity+CoreDataProperties.swift */; };
+		FC656D6E238D5FFB00653795 /* UserEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC656D68238D5FFB00653795 /* UserEntity+CoreDataClass.swift */; };
+		FC656D6F238D5FFB00653795 /* UserEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC656D69238D5FFB00653795 /* UserEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +57,12 @@
 		FC069472238C764E00A3BA5D /* UserListChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserListChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC069476238C764E00A3BA5D /* UserListChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListChallengeUITests.swift; sourceTree = "<group>"; };
 		FC069478238C764E00A3BA5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC069484238C768000A3BA5D /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
-		FC069486238C76A100A3BA5D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FC069488238C78FD00A3BA5D /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		FC656D62238D534700653795 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
+		FC656D66238D5FFB00653795 /* FriendEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FC656D67238D5FFB00653795 /* FriendEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FriendEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FC656D68238D5FFB00653795 /* UserEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FC656D69238D5FFB00653795 /* UserEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,13 +113,15 @@
 		FC069450238C764C00A3BA5D /* UserListChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				FC656D66238D5FFB00653795 /* FriendEntity+CoreDataClass.swift */,
+				FC656D67238D5FFB00653795 /* FriendEntity+CoreDataProperties.swift */,
+				FC656D68238D5FFB00653795 /* UserEntity+CoreDataClass.swift */,
+				FC656D69238D5FFB00653795 /* UserEntity+CoreDataProperties.swift */,
 				FC069451238C764C00A3BA5D /* AppDelegate.swift */,
 				FC069453238C764C00A3BA5D /* SceneDelegate.swift */,
 				FC069458238C764C00A3BA5D /* ContentView.swift */,
 				FC656D62238D534700653795 /* UserDetailsView.swift */,
 				FC069488238C78FD00A3BA5D /* UserView.swift */,
-				FC069484238C768000A3BA5D /* Friend.swift */,
-				FC069486238C76A100A3BA5D /* User.swift */,
 				FC06945A238C764E00A3BA5D /* Assets.xcassets */,
 				FC06945F238C764E00A3BA5D /* LaunchScreen.storyboard */,
 				FC069462238C764E00A3BA5D /* Info.plist */,
@@ -282,13 +288,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC656D6D238D5FFB00653795 /* FriendEntity+CoreDataProperties.swift in Sources */,
+				FC656D6F238D5FFB00653795 /* UserEntity+CoreDataProperties.swift in Sources */,
 				FC656D63238D534700653795 /* UserDetailsView.swift in Sources */,
+				FC656D6C238D5FFB00653795 /* FriendEntity+CoreDataClass.swift in Sources */,
 				FC069452238C764C00A3BA5D /* AppDelegate.swift in Sources */,
 				FC069454238C764C00A3BA5D /* SceneDelegate.swift in Sources */,
-				FC069487238C76A100A3BA5D /* User.swift in Sources */,
-				FC069485238C768000A3BA5D /* Friend.swift in Sources */,
 				FC069459238C764C00A3BA5D /* ContentView.swift in Sources */,
 				FC069457238C764C00A3BA5D /* UserListChallenge.xcdatamodeld in Sources */,
+				FC656D6E238D5FFB00653795 /* UserEntity+CoreDataClass.swift in Sources */,
 				FC069489238C78FD00A3BA5D /* UserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

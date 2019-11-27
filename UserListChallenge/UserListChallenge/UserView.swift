@@ -10,7 +10,7 @@ import SwiftUI
 
 struct UserView: View {
     
-    var user: User
+    var user: UserEntity
     
     var body: some View {
         VStack(spacing: 4) {
@@ -36,11 +36,5 @@ struct UserView: View {
             }
             
         }
-    }
-}
-
-struct UserView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserView(user: User(name: "Tulio", id: "123", isActive: true, age: 27, company: "Usemobile", email: "tulio@usemobile.xyz", address: "151, Professor Francisco Pignatario Street", about: "I'm an iOS developer who develops iOS applications", registered: "true story", tags: ["iOS", "HackingWithSwift"], friends: [Friend(id: "123456", name: "Gandalf")]))
     }
 }

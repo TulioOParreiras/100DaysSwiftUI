@@ -10,8 +10,8 @@ import SwiftUI
 
 struct UserDetailsView: View {
     
-    var user: User
-    var userList: [User]
+    var user: UserEntity
+    var userList: [UserEntity]
     
     var body: some View {
         ScrollView {
@@ -46,10 +46,10 @@ struct UserDetailsView: View {
             Section {
                 Text("Friends List")
                 
-                ForEach(0 ..< self.user.friends.count) { row in
+                ForEach(0 ..< self.user.friendArray.count) { row in
                     NavigationLink(destination: UserDetailsView(user: self.getUser(for: row), userList: self.userList)) {
                         HStack {
-                        Text(self.user.friends[row].name)
+                        Text(self.user.friendArray[row].name)
                         Spacer()
                         }
                     }
@@ -71,14 +71,8 @@ struct UserDetailsView: View {
         .navigationBarTitle(self.user.name + " (\(self.user.age))")
     }
     
-    func getUser(for row: Int) -> User {
-        return self.userList.first(where: { $0.id == self.user.friends[row].id})!
+    func getUser(for row: Int) -> UserEntity {
+        return self.userList.first(where: { $0.id == self.user.friendArray[row].id})!
     }
     
-}
-
-struct UserDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserDetailsView(user: User(name: "Tulio", id: "123", isActive: true, age: 27, company: "Usemobile", email: "tulio@usemobile.xyz", address: "151, Professor Francisco Pignatario Street", about: "I'm an iOS developer who develops iOS applications", registered: "true story", tags: ["iOS", "HackingWithSwift"], friends: [Friend(id: "123456", name: "Gandalf")]), userList: [])
-    }
 }
