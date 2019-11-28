@@ -16,6 +16,8 @@
 		FC1EDBC3238E9683003C34F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1EDBC1238E9683003C34F5 /* LaunchScreen.storyboard */; };
 		FC1EDBCE238E9683003C34F5 /* InstafilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EDBCD238E9683003C34F5 /* InstafilterTests.swift */; };
 		FC1EDBD9238E9683003C34F5 /* InstafilterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EDBD8238E9683003C34F5 /* InstafilterUITests.swift */; };
+		FC1EDBE7238EBC04003C34F5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1EDBE6238EBC04003C34F5 /* ImagePicker.swift */; };
+		FC9D0AAD238FF3D900DF4688 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9D0AAC238FF3D900DF4688 /* ImageSaver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		FC1EDBD4238E9683003C34F5 /* InstafilterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstafilterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1EDBD8238E9683003C34F5 /* InstafilterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstafilterUITests.swift; sourceTree = "<group>"; };
 		FC1EDBDA238E9683003C34F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC1EDBE6238EBC04003C34F5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		FC9D0AAC238FF3D900DF4688 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +107,9 @@
 			children = (
 				FC1EDBB3238E967F003C34F5 /* AppDelegate.swift */,
 				FC1EDBB5238E967F003C34F5 /* SceneDelegate.swift */,
+				FC1EDBE6238EBC04003C34F5 /* ImagePicker.swift */,
 				FC1EDBBA238E967F003C34F5 /* ContentView.swift */,
+				FC9D0AAC238FF3D900DF4688 /* ImageSaver.swift */,
 				FC1EDBBC238E9683003C34F5 /* Assets.xcassets */,
 				FC1EDBC1238E9683003C34F5 /* LaunchScreen.storyboard */,
 				FC1EDBC4238E9683003C34F5 /* Info.plist */,
@@ -271,7 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1EDBB9238E967F003C34F5 /* Instafilter.xcdatamodeld in Sources */,
+				FC9D0AAD238FF3D900DF4688 /* ImageSaver.swift in Sources */,
 				FC1EDBB4238E967F003C34F5 /* AppDelegate.swift in Sources */,
+				FC1EDBE7238EBC04003C34F5 /* ImagePicker.swift in Sources */,
 				FC1EDBBB238E967F003C34F5 /* ContentView.swift in Sources */,
 				FC1EDBB6238E967F003C34F5 /* SceneDelegate.swift in Sources */,
 			);
@@ -440,6 +448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Instafilter/Preview Content\"";
+				DEVELOPMENT_TEAM = 4KBYJ4JT96;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Instafilter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -459,6 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Instafilter/Preview Content\"";
+				DEVELOPMENT_TEAM = 4KBYJ4JT96;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Instafilter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
