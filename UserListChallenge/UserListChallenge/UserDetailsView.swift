@@ -53,19 +53,10 @@ struct UserDetailsView: View {
                         Spacer()
                         }
                     }
-//                    NavigationLink(destination: UserDetailsView(user: self.userList.first(where: { $0 == self.user.friends[row] })!), userList: self.userList) {
-//
-//                    }
                 }
-//                List(self.user.friends) { friend in
-//                    Text(friend.name)
-//                }
             }
             .padding(EdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0))
             
-            
-            
-//            Spacer()
         }
         .padding(16)
         .navigationBarTitle(self.user.name + " (\(self.user.age))")

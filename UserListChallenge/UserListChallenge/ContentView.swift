@@ -57,11 +57,7 @@ struct ContentView: View {
                     let decoder = JSONDecoder()
                     decoder.userInfo[CodingUserInfoKey.context!] = self.moc
                     self.users = try decoder.decode([UserEntity].self, from: data)
-//                    self.users.forEach({ let _ = self.getUserEntity(from: $0)})
                     try? self.moc.save()
-//                    self.userEntities.forEach({
-//                        print($0)
-//                    })
                 } catch {
                     print("Decode error: ", error)
                 }
@@ -77,19 +73,4 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
-
-extension NSManagedObject {
-    
-    func convertToJSONArray() -> [String: Any] {
-        var dict: [String: Any] = [:]
-        for attribute in self.entity.attributesByName {
-            //check if value is present, then add key to dictionary so as to avoid the nil value crash
-            if let value = self.value(forKey: attribute.key) {
-                dict[attribute.key] = value
-            }
-        }
-        return dict
-    }
-    
 }
