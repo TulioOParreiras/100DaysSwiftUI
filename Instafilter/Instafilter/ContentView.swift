@@ -15,12 +15,18 @@ struct ContentView: View {
     
     @State private var image: Image?
     @State private var filterIntensity = 0.5
+    @State private var filterRadius = 0.5
+    @State private var filterScale = 0.5
     
     @State private var showingFilterSheet = false
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     
     @State private var processedImage: UIImage?
+    
+    @State private var showingErrorAlert = false
+    @State private var errorMessage = ""
+    @State private var filterTitle = "Change Filter"
     
     @State var currentFilter: CIFilter = CIFilter.sepiaTone()
     let context = CIContext()
@@ -32,6 +38,24 @@ struct ContentView: View {
         },
             set: {
                 self.filterIntensity = $0
+                self.applyProcessing()
+        }
+        )
+        let radius = Binding<Double>(
+            get: {
+                self.filterRadius
+        },
+            set: {
+                self.filterRadius = $0
+                self.applyProcessing()
+        }
+        )
+        let scale = Binding<Double>(
+            get: {
+                self.filterScale
+        },
+            set: {
+                self.filterScale = $0
                 self.applyProcessing()
         }
         )
@@ -63,14 +87,31 @@ struct ContentView: View {
                 .padding(.vertical)
                 
                 HStack {
-                    Button("Change Filter") {
+                    Text("Radius")
+                    Slider(value: radius)
+                }
+                .padding(.vertical)
+                
+                HStack {
+                    Text("Scale")
+                    Slider(value: scale)
+                }
+                .padding(.vertical)
+                
+                
+                HStack {
+                    Button(self.filterTitle) {
                         self.showingFilterSheet = true
                     }
                     
                     Spacer()
                     
                     Button("Save") {
-                        guard let processedImage = self.processedImage else { return }
+                        guard let processedImage = self.processedImage else {
+                            self.showingErrorAlert = true
+                            self.errorMessage = "You must select an image to proceed"
+                            return
+                        }
                         
                         let imageSaver = ImageSaver()
                         
@@ -91,33 +132,50 @@ struct ContentView: View {
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
                 ImagePicker(image: self.$inputImage)
             }
+                
         .actionSheet(isPresented: $showingFilterSheet, content: {
-            ActionSheet(title: Text("Select a filter"), buttons: [
-                .default(Text("Crystalize")) {
-                    self.setFilter(CIFilter.crystallize())
-                },
-                .default(Text("Edges")) {
-                    self.setFilter(CIFilter.edges())
-                },
-                .default(Text("Gaussian Blur")) {
-                    self.setFilter(CIFilter.gaussianBlur())
-                },
-                .default(Text("Pixellate")) {
-                    self.setFilter(CIFilter.pixellate())
-                },
-                .default(Text("Sepia Tone")) {
-                    self.setFilter(CIFilter.sepiaTone())
-                },
-                .default(Text("Unsharp Mask")) {
-                    self.setFilter(CIFilter.unsharpMask())
-                },
-                .default(Text("Vignette")) {
-                    self.setFilter(CIFilter.vignette())
-                },
-                .cancel()
-            ])
+            return self.actionSheet()
         })
+                .alert(isPresented: $showingErrorAlert) {
+                    Alert(title: Text("Oops..."),
+                          message: Text(self.errorMessage),
+                          dismissButton: .default(Text("OK")))
+            }
         }
+    }
+    
+    func actionSheet() -> ActionSheet {
+        ActionSheet(title: Text("Select a filter"), buttons: [
+            .default(Text("Crystalize")) {
+                self.filterTitle = "Crystalize"
+                self.setFilter(CIFilter.crystallize())
+            },
+            .default(Text("Edges")) {
+                self.filterTitle = "Edges"
+                self.setFilter(CIFilter.edges())
+            },
+            .default(Text("Gaussian Blur")) {
+                self.filterTitle = "Gaussian Blur"
+                self.setFilter(CIFilter.gaussianBlur())
+            },
+            .default(Text("Pixellate")) {
+                self.filterTitle = "Pixellate"
+                self.setFilter(CIFilter.pixellate())
+            },
+            .default(Text("Sepia Tone")) {
+                self.filterTitle = "Sepia Tone"
+                self.setFilter(CIFilter.sepiaTone())
+            },
+            .default(Text("Unsharp Mask")) {
+                self.filterTitle = "Unsharp Mask"
+                self.setFilter(CIFilter.unsharpMask())
+            },
+            .default(Text("Vignette")) {
+                self.filterTitle = "Vignette"
+                self.setFilter(CIFilter.vignette())
+            },
+            .cancel()
+        ])
     }
     
     func loadImage() {
@@ -134,10 +192,10 @@ struct ContentView: View {
             self.currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey)
         }
         if inputKeys.contains(kCIInputRadiusKey) {
-            self.currentFilter.setValue(filterIntensity * 200, forKey: kCIInputRadiusKey)
+            self.currentFilter.setValue(filterRadius * 200, forKey: kCIInputRadiusKey)
         }
         if inputKeys.contains(kCIInputScaleKey) {
-            self.currentFilter.setValue(filterIntensity * 10, forKey: kCIInputScaleKey)
+            self.currentFilter.setValue(filterScale * 10, forKey: kCIInputScaleKey)
         }
         
         guard let outputImage = currentFilter.outputImage else { return }
