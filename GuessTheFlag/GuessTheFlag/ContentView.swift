@@ -10,6 +10,11 @@ import SwiftUI
 
 struct ContentView: View {
     
+    let labels = [
+        "Estonia": "Flag with three horizontal stripers of equal size. Top stripe blue, middle striple black, bottom stripe white",
+        "France": "Flag with three vertical stripes of equal size. Left stripe blue, middle stripe with, right stripe red"
+    ]
+    
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
     @State private var correctAnswer = Int.random(in: 0...2)
     
@@ -43,6 +48,7 @@ struct ContentView: View {
                         self.flagTapped(number)
                     }) {
                         FlagImage(named: self.countries[number])
+                            .accessibility(label: Text(self.labels[self.countries[number], default: "Unknown flag"]))
                     }
                     .rotation3DEffect(.degrees(self.correctAnswer == number ? self.spinAmount : 0), axis: (x: 0, y: 1, z: 0))
                     .opacity(self.correctAnswer == number ? 1 : self.opacityValue)
