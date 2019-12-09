@@ -17,6 +17,11 @@
 		FCA35D9F2397D23B0016C9FD /* BucketListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA35D9E2397D23B0016C9FD /* BucketListTests.swift */; };
 		FCA35DAA2397D23B0016C9FD /* BucketListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA35DA92397D23B0016C9FD /* BucketListUITests.swift */; };
 		FCA35DB82397D9B90016C9FD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA35DB72397D9B90016C9FD /* MapView.swift */; };
+		FCD3D9FF239EC2AB0085426C /* MKPointAnnotation-ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3D9FE239EC2AB0085426C /* MKPointAnnotation-ObservableObject.swift */; };
+		FCD3DA01239EC3150085426C /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3DA00239EC3150085426C /* EditView.swift */; };
+		FCD3DA03239EC4D90085426C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3DA02239EC4D90085426C /* Result.swift */; };
+		FCD3DA05239EC8BC0085426C /* MKPointAnnotation-Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3DA04239EC8BC0085426C /* MKPointAnnotation-Codable.swift */; };
+		FCD3DA07239ED3090085426C /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3DA06239ED3090085426C /* ContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		FCA35DA92397D23B0016C9FD /* BucketListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListUITests.swift; sourceTree = "<group>"; };
 		FCA35DAB2397D23B0016C9FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCA35DB72397D9B90016C9FD /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		FCD3D9FE239EC2AB0085426C /* MKPointAnnotation-ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-ObservableObject.swift"; sourceTree = "<group>"; };
+		FCD3DA00239EC3150085426C /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		FCD3DA02239EC4D90085426C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		FCD3DA04239EC8BC0085426C /* MKPointAnnotation-Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-Codable.swift"; sourceTree = "<group>"; };
+		FCD3DA06239ED3090085426C /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +116,11 @@
 				FCA35D842397D2370016C9FD /* AppDelegate.swift */,
 				FCA35D862397D2370016C9FD /* SceneDelegate.swift */,
 				FCA35D8B2397D2370016C9FD /* ContentView.swift */,
+				FCD3DA06239ED3090085426C /* ContainerView.swift */,
+				FCD3DA02239EC4D90085426C /* Result.swift */,
+				FCD3D9FE239EC2AB0085426C /* MKPointAnnotation-ObservableObject.swift */,
+				FCD3DA00239EC3150085426C /* EditView.swift */,
+				FCD3DA04239EC8BC0085426C /* MKPointAnnotation-Codable.swift */,
 				FCA35DB72397D9B90016C9FD /* MapView.swift */,
 				FCA35D8D2397D23B0016C9FD /* Assets.xcassets */,
 				FCA35D922397D23B0016C9FD /* LaunchScreen.storyboard */,
@@ -273,10 +288,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD3DA07239ED3090085426C /* ContainerView.swift in Sources */,
 				FCA35D852397D2370016C9FD /* AppDelegate.swift in Sources */,
+				FCD3D9FF239EC2AB0085426C /* MKPointAnnotation-ObservableObject.swift in Sources */,
 				FCA35D8A2397D2370016C9FD /* BucketList.xcdatamodeld in Sources */,
 				FCA35DB82397D9B90016C9FD /* MapView.swift in Sources */,
+				FCD3DA01239EC3150085426C /* EditView.swift in Sources */,
 				FCA35D8C2397D2370016C9FD /* ContentView.swift in Sources */,
+				FCD3DA05239EC8BC0085426C /* MKPointAnnotation-Codable.swift in Sources */,
+				FCD3DA03239EC4D90085426C /* Result.swift in Sources */,
 				FCA35D872397D2370016C9FD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
