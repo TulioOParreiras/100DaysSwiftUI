@@ -16,6 +16,8 @@ struct AddPhotoView: View {
     @State private var showingPicker = false
     @Environment(\.presentationMode) var presentationMode
     
+    let locationFetcher = LocationFetcher()
+    
     var body: some View {
         
         ScrollView {
@@ -48,12 +50,16 @@ struct AddPhotoView: View {
         .sheet(isPresented: $showingPicker, content: {
             ImagePicker(image: self.$selectedImage)
         })
+        .onAppear(perform: {
+            self.locationFetcher.start()
+        })
     }
     
     func finish() {
+        guard let location = self.locationFetcher.lastKnownLocation else { return }
         guard !self.name.isEmpty else { return }
         guard let image = self.selectedImage, let data = image.jpegData(compressionQuality: 1) else { return }
-        self.photos.append(Photo(name: self.name, data: data))
+        self.photos.append(Photo(name: self.name, data: data, latitude: location.latitude, longitude: location.longitude))
         do {
             try self.saveData()
         } catch {

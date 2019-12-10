@@ -11,10 +11,7 @@ import SwiftUI
 
 struct MapView: UIViewRepresentable {
     
-    @Binding var centerCoordinate: CLLocationCoordinate2D
-    @Binding var selectedPlace: MKPointAnnotation?
-    @Binding var showingPlaceDetails: Bool
-    var annotations: [MKPointAnnotation]
+    var photo: Photo
     
     class Coordinator: NSObject, MKMapViewDelegate {
         var parent: MapView
@@ -23,33 +20,14 @@ struct MapView: UIViewRepresentable {
             self.parent = parent
         }
         
-        func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-            self.parent.centerCoordinate = mapView.centerCoordinate
-        }
-        
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-            let identifier = "Placemark"
-            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-            if annotationView == nil {
-                annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-                annotationView?.canShowCallout = true
-                annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-            } else {
-                annotationView?.annotation = annotation
-            }
-            return annotationView
-            
-            
-//            let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
-//            view.canShowCallout = true
-//            return view
+
+
+            let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
+            view.canShowCallout = true
+            return view
         }
         
-        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-            guard let placemark = view.annotation as? MKPointAnnotation else { return }
-            parent.selectedPlace = placemark
-            parent.showingPlaceDetails = true
-        }
         
     }
     
@@ -59,22 +37,27 @@ struct MapView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
+//        mapView.isUserInteractionEnabled = false
         mapView.delegate = context.coordinator
-        
-//        let annotation = MKPointAnnotation()
-//        annotation.title = "London"
-//        annotation.subtitle = "Capital of England"
-//        annotation.coordinate = CLLocationCoordinate2D(latitude: 51.5, longitude: 0.13)
-//        mapView.addAnnotation(annotation)
+        if let location = self.photo.location {
+            mapView.centerCoordinate = location
+        }
+        mapView.cameraZoomRange = MKMapView.CameraZoomRange.init(maxCenterCoordinateDistance: 10000)
+//        mapView.setCameraZoomRange(MKMapView.CameraZoomRange.init(maxCenterCoordinateDistance: 10000), animated: false)
         
         return mapView
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        if annotations.count != uiView.annotations.count {
-            uiView.removeAnnotations(uiView.annotations)
-            uiView.addAnnotations(self.annotations)
+        if let location = self.photo.location {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = location
+            uiView.addAnnotation(annotation)
         }
+//        if annotations.count != uiView.annotations.count {
+//            uiView.removeAnnotations(uiView.annotations)
+//            uiView.addAnnotations(self.annotations)
+//        }
     }
 }
 
@@ -88,8 +71,8 @@ extension MKPointAnnotation {
     }
 }
 
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapView(centerCoordinate: .constant(MKPointAnnotation.example.coordinate), selectedPlace: .constant(MKPointAnnotation.example), showingPlaceDetails: .constant(false), annotations: [MKPointAnnotation.example])
-    }
-}
+//struct MapView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MapView(centerCoordinate: .constant(MKPointAnnotation.example.coordinate), selectedPlace: .constant(MKPointAnnotation.example), showingPlaceDetails: .constant(false), annotations: [MKPointAnnotation.example])
+//    }
+//}
