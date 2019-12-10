@@ -9,102 +9,48 @@
 import SwiftUI
 import UIKit
 
-struct NameView: View {
-    
-    @State private var aux_name: String = ""
-    @Binding var name: String
-    @Environment(\.presentationMode) var presentationMode
-    
-    var body: some View {
-        VStack {
-
-            TextField("Type the image's name", text: $aux_name)
-            Button(action: {
-                self.name = self.aux_name
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                Text("Confirm")
-            }
-        }
-    }
-}
-
 struct ContentView: View {
     
     @State private var photos: [Photo] = []
-    @State private var selectedImage: UIImage?
-    @State private var showingPicker = false
-    @State private var didSelectImage = false
-    @State private var imageName: String = ""
+    @State private var showingAddPhoto = false
     
     var body: some View {
-        let pickedImage = Binding<UIImage?>(
-            get: {
-                self.selectedImage
-        },
-            set: {
-                self.selectedImage = $0
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    self.didSelectImage = true
-                }
-        }
-        )
-        let pickedName = Binding<String>(
-            get :{
-                self.imageName
-        },
-            set: {
-                self.imageName = $0
-                self.saveImage()
-        })
-        let showingSheet = Binding<Bool>(
-            get: {
-                self.showingPicker || self.didSelectImage
-        },
-            set: {
-                self.showingPicker = $0
-                self.didSelectImage = $0
-        }
-        )
         
         return NavigationView {
             List(photos) { photo in
-                HStack {
-                    Image(uiImage: photo.image)
-                    .resizable()
-                        .frame(width: 30, height: 30)
-                        .padding()
-                    Text(photo.name)
+                NavigationLink(destination: DetailView(photo: photo)) {
+                    HStack {
+                        Image(uiImage: photo.image)
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .clipShape(RoundedRectangle(radius: 3))
+                        Text(photo.name)
+                    }
                 }
             }
             .navigationBarTitle("Photo Library")
             .navigationBarItems(trailing: Button(action: {
-                self.showingPicker = true
+                self.showingAddPhoto = true
             }){
                 Image(systemName: "plus")
             })
         }
-        .sheet(isPresented: showingSheet, content: {
-            if self.didSelectImage {
-                NameView(name: pickedName)
-            } else if self.showingPicker {
-                ImagePicker(image: pickedImage)
-            }
+        .sheet(isPresented: $showingAddPhoto, content: {
+            AddPhotoView(photos: self.$photos)
             
         })
-//        .sheet(isPresented: $didSelectImage, content: {
-//            NameView(name: pickedName)
-//        })
+            .onAppear(perform: loadData)
     }
     
-    func saveImage() {
-        guard let image = self.selectedImage, let data = image.jpegData(compressionQuality: 1) else { return }
-        let photo = Photo(name: self.imageName, data: data)
-        self.photos.append(photo)
-        self.selectedImage = nil
-        self.imageName = ""
-        self.didSelectImage = false
-        self.showingPicker = false
+    func loadData() {
+        guard let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        let fileName = path.appendingPathComponent("SavedPhotos")
+        do {
+            let data = try Data(contentsOf: fileName)
+            self.photos = try JSONDecoder().decode([Photo].self, from: data)
+        } catch {
+            print("Load data error: \(error)")
+        }
     }
     
 }

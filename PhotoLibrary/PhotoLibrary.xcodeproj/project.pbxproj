@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FCAB511523A00B4700010DC0 /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB511423A00B4700010DC0 /* AddPhotoView.swift */; };
+		FCAB511723A0105C00010DC0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB511623A0105C00010DC0 /* DetailView.swift */; };
+		FCAB511923A0197900010DC0 /* RoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB511823A0197900010DC0 /* RoundedRectangle.swift */; };
 		FCD3DA54239EEDB30085426C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3DA53239EEDB30085426C /* AppDelegate.swift */; };
 		FCD3DA56239EEDB30085426C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3DA55239EEDB30085426C /* SceneDelegate.swift */; };
 		FCD3DA59239EEDB30085426C /* PhotoLibrary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCD3DA57239EEDB30085426C /* PhotoLibrary.xcdatamodeld */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FCAB511423A00B4700010DC0 /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
+		FCAB511623A0105C00010DC0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		FCAB511823A0197900010DC0 /* RoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangle.swift; sourceTree = "<group>"; };
 		FCD3DA50239EEDB30085426C /* PhotoLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD3DA53239EEDB30085426C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCD3DA55239EEDB30085426C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +116,9 @@
 				FCD3DA5A239EEDB30085426C /* ContentView.swift */,
 				FCD3DA86239EEDE30085426C /* ImagePicker.swift */,
 				FCD3DA88239EEFB20085426C /* Photo.swift */,
+				FCAB511423A00B4700010DC0 /* AddPhotoView.swift */,
+				FCAB511623A0105C00010DC0 /* DetailView.swift */,
+				FCAB511823A0197900010DC0 /* RoundedRectangle.swift */,
 				FCD3DA5C239EEDB50085426C /* Assets.xcassets */,
 				FCD3DA61239EEDB50085426C /* LaunchScreen.storyboard */,
 				FCD3DA64239EEDB50085426C /* Info.plist */,
@@ -277,7 +286,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCD3DA89239EEFB20085426C /* Photo.swift in Sources */,
+				FCAB511723A0105C00010DC0 /* DetailView.swift in Sources */,
 				FCD3DA54239EEDB30085426C /* AppDelegate.swift in Sources */,
+				FCAB511523A00B4700010DC0 /* AddPhotoView.swift in Sources */,
+				FCAB511923A0197900010DC0 /* RoundedRectangle.swift in Sources */,
 				FCD3DA56239EEDB30085426C /* SceneDelegate.swift in Sources */,
 				FCD3DA87239EEDE30085426C /* ImagePicker.swift in Sources */,
 				FCD3DA5B239EEDB30085426C /* ContentView.swift in Sources */,
