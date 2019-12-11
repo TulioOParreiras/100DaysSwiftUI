@@ -23,7 +23,7 @@ struct DetailView: View {
                 Image(uiImage: self.photo.image)
                     .resizable()
                     .frame(maxWidth: geometry.size.width * 0.8, maxHeight: geometry.size.width * 0.8)
-                    .clipShape(RoundedRectangle())
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
                     .aspectRatio(contentMode: .fill)
                 
                 if self.photo.location != nil {

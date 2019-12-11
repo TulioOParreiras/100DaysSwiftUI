@@ -27,7 +27,7 @@ struct AddPhotoView: View {
                     .resizable()
                     .frame(width: 150, height: 150)
                     .background(Color.gray)
-                    .clipShape(RoundedRectangle())
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
                     .onTapGesture {
                         self.showingPicker = true
                 }

@@ -23,7 +23,7 @@ struct ContentView: View {
                         Image(uiImage: photo.image)
                             .resizable()
                             .frame(width: 30, height: 30)
-                            .clipShape(RoundedRectangle(radius: 3))
+                            .clipShape(RoundedRectangle(cornerRadius: 3))
                         Text(photo.name)
                     }
                 }
