@@ -7,12 +7,14 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 import CodeScanner
 
 struct ProspectsView: View {
     
     @EnvironmentObject var prospects: Prospects
+    @State private var isShowingSheet = false
     @State private var isShowingScanner = false
     
     enum FilterType {
@@ -43,19 +45,34 @@ struct ProspectsView: View {
         }
     }
     
+    enum SortTypes: String, CaseIterable {
+        case name, date
+    }
+    
+    var selectedSort: SortTypes = .name
+    
     var body: some View {
         NavigationView {
             List {
                 ForEach(filteredProspects) { prospect in
-                    VStack(alignment: .leading) {
-                        Text(prospect.name)
-                            .font(.headline)
-                        Text(prospect.emailAddress)
-                            .foregroundColor(.secondary)
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(prospect.name)
+                                .font(.headline)
+                            Text(prospect.emailAddress)
+                                .foregroundColor(.secondary)
+                        }
+                        Spacer()
+                        Image(systemName: prospect.isContacted ? "person.crop.circle.badge.checkmark" : "person.crop.circle.badge.xmark")
                     }
                     .contextMenu {
                         Button(prospect.isContacted ? "Mark Uncontacted" : "Mark Contacted" ) {
                             self.prospects.toggle(prospect)
+                        }
+                        if !prospect.isContacted {
+                            Button("Remind Me") {
+                                self.addNotification(for: prospect)
+                            }
                         }
                     }
                     
@@ -69,9 +86,21 @@ struct ProspectsView: View {
                     Text("Scan")
                 })
             .sheet(isPresented: $isShowingScanner) {
-                CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan)
+                    CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan)
+            }
+            .actionSheet(isPresented: $isShowingSheet) {
+                ActionSheet(title: Text("Sort"), buttons: SortTypes.allCases.compactMap({
+                    return ActionSheet.Button.default(Text("Sort by \($0.rawValue.capitalized)")) {
+//                        self.sort(by: $0)
+                    }
+                    
+                }))
             }
         }
+    }
+    
+    func sort(by type: SortTypes) {
+        
     }
     
     func handleScan(result: Result<String, CodeScannerView.ScanError>) {
@@ -85,11 +114,45 @@ struct ProspectsView: View {
            person.name = details[0]
            person.emailAddress = details[1]
 
-           self.prospects.people.append(person)
+           self.prospects.add(person)
        case .failure(let error):
            print("Scanning failed: \(error)")
        }
     }
+    
+    func addNotification(for prospect: Prospect) {
+        let center = UNUserNotificationCenter.current()
+
+        let addRequest = {
+            let content = UNMutableNotificationContent()
+            content.title = "Contact \(prospect.name)"
+            content.subtitle = prospect.emailAddress
+            content.sound = UNNotificationSound.default
+
+//            var dateComponents = DateComponents()
+//            dateComponents.hour = 9
+//            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            center.add(request)
+        }
+        
+        center.getNotificationSettings { settings in
+            if settings.authorizationStatus == .authorized {
+                addRequest()
+            } else {
+                center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                    if success {
+                        addRequest()
+                    } else {
+                        print("D'oh")
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 struct ProspectsView_Previews: PreviewProvider {
