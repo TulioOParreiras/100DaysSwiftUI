@@ -21,6 +21,7 @@
 		FC77DA3B23A7C4C1005434F3 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC77DA3A23A7C4C1005434F3 /* ProspectsView.swift */; };
 		FC77DA3D23A7C4CC005434F3 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC77DA3C23A7C4CC005434F3 /* MeView.swift */; };
 		FC77DA3F23A7C761005434F3 /* Prospects.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC77DA3E23A7C761005434F3 /* Prospects.swift */; };
+		FCF6635C23A82B1300778614 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = FCF6635B23A82B1300778614 /* CodeScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF6635C23A82B1300778614 /* CodeScanner in Frameworks */,
 				FC2748D623A3C1EF00F4B4B4 /* SamplePackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +173,7 @@
 			name = HotProspects;
 			packageProductDependencies = (
 				FC2748D523A3C1EF00F4B4B4 /* SamplePackage */,
+				FCF6635B23A82B1300778614 /* CodeScanner */,
 			);
 			productName = HotProspects;
 			productReference = FC1146B523A1203400EAED5A /* HotProspects.app */;
@@ -246,6 +249,7 @@
 			mainGroup = FC1146AC23A1203400EAED5A;
 			packageReferences = (
 				FC2748D423A3C1EF00F4B4B4 /* XCRemoteSwiftPackageReference "SamplePackage" */,
+				FCF6635A23A82B1300778614 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = FC1146B623A1203400EAED5A /* Products */;
 			projectDirPath = "";
@@ -464,8 +468,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HotProspects/Preview Content\"";
+				DEVELOPMENT_TEAM = 4KBYJ4JT96;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HotProspects/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -483,8 +489,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HotProspects/Preview Content\"";
+				DEVELOPMENT_TEAM = 4KBYJ4JT96;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HotProspects/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -626,6 +634,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		FCF6635A23A82B1300778614 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -633,6 +649,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FC2748D423A3C1EF00F4B4B4 /* XCRemoteSwiftPackageReference "SamplePackage" */;
 			productName = SamplePackage;
+		};
+		FCF6635B23A82B1300778614 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCF6635A23A82B1300778614 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 /* End XCSwiftPackageProductDependency section */
 
