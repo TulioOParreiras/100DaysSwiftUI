@@ -17,6 +17,8 @@ struct ProspectsView: View {
     @State private var isShowingSheet = false
     @State private var isShowingScanner = false
     
+    @State private var selectedSort: SortTypes = .name
+    
     enum FilterType {
         case none, contacted, uncontacted
         
@@ -32,6 +34,10 @@ struct ProspectsView: View {
         }
     }
     
+    enum SortTypes: String, CaseIterable {
+        case name, date
+    }
+    
     let filter: FilterType
     
     var filteredProspects: [Prospect] {
@@ -45,16 +51,25 @@ struct ProspectsView: View {
         }
     }
     
-    enum SortTypes: String, CaseIterable {
-        case name, date
+    var sortedProspects: [Prospect] {
+        switch self.selectedSort {
+        case .name:
+            return self.filteredProspects.sorted(by: { $0.name < $1.name })
+        case .date:
+            return self.filteredProspects.sorted(by: { $0.date < $1.date })
+        }
     }
     
-    var selectedSort: SortTypes = .name
+    let datas: [String] = ["Paul Hudson\npaul@hackingwithswift.com",
+    "Tulio Parreiras\ntulio@usemobile.xyz",
+    "Jose Fernando\njose@email.com",
+    "Juan Carlos\njuan@email.com",
+    "Daniel\ndaniel@gmail.com"]
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(filteredProspects) { prospect in
+                ForEach(sortedProspects) { prospect in
                     HStack {
                         VStack(alignment: .leading) {
                             Text(prospect.name)
@@ -79,19 +94,24 @@ struct ProspectsView: View {
                 }
             }
                 .navigationBarTitle(self.filter.title)
-                .navigationBarItems(trailing: Button(action: {
+            .navigationBarItems(leading: Button(action: {
+                self.isShowingSheet = true
+            }) {
+                Image(systemName: "arrow.up.arrow.down.circle")
+                Text(self.selectedSort.rawValue.capitalized)
+                }, trailing: Button(action: {
                     self.isShowingScanner = true
                 }) {
                     Image(systemName: "qrcode.viewfinder")
                     Text("Scan")
-                })
+            })
             .sheet(isPresented: $isShowingScanner) {
-                    CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan)
+                CodeScannerView(codeTypes: [.qr], simulatedData: self.datas.randomElement() ?? "", completion: self.handleScan)
             }
             .actionSheet(isPresented: $isShowingSheet) {
-                ActionSheet(title: Text("Sort"), buttons: SortTypes.allCases.compactMap({
-                    return ActionSheet.Button.default(Text("Sort by \($0.rawValue.capitalized)")) {
-//                        self.sort(by: $0)
+                ActionSheet(title: Text("Sort"), buttons: SortTypes.allCases.compactMap({ sort in
+                    ActionSheet.Button.default(Text("Sort by \(sort.rawValue.capitalized)")) {
+                        self.sort(by: sort)
                     }
                     
                 }))
@@ -100,7 +120,7 @@ struct ProspectsView: View {
     }
     
     func sort(by type: SortTypes) {
-        
+        self.selectedSort = type
     }
     
     func handleScan(result: Result<String, CodeScannerView.ScanError>) {
