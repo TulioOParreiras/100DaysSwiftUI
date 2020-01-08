@@ -11,6 +11,16 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @Environment(\.accessibilityReduceTransparency) var reduceTransparency
+    
+    @Environment(\.accessibilityReduceMotion) var reduceMotion
+    @State private var scale: CGFloat = 1
+    
+    @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @State private var counter = 0
+    
     @State private var engine: CHHapticEngine?
     
     // how far the circle has been dragged
@@ -18,17 +28,62 @@ struct ContentView: View {
 
     // where it is currently being dragged or not
     @State private var isDragging = false
-
+    
     var body: some View {
-        VStack {
-            Text("Hello")
-            Spacer().frame(height: 100)
-            Text("World")
-        }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            print("VStack tapped!")
-        }
+        Text("Hello, World!")
+            .padding()
+            .background(reduceTransparency ? Color.black : Color.black.opacity(0.5))
+            .foregroundColor(Color.white)
+            .clipShape(Capsule())
+    
+//        Text("Hello, World!")
+//        .scaleEffect(scale)
+//        .onTapGesture {
+//            self.withOptionalAnimation {
+//                self.scale *= 1.5
+//            }
+//        }
+        
+//        HStack {
+//            if differentiateWithoutColor {
+//                Image(systemName: "checkmark.circle")
+//            }
+//
+//            Text("Success")
+//        }
+//        .padding()
+//        .background(differentiateWithoutColor ? Color.black : Color.green)
+//        .foregroundColor(Color.white)
+//        .clipShape(Capsule())
+        
+//        Text("Hello, World!")
+////        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+////            print("Moving to the background!")
+////        }
+//        .onReceive(NotificationCenter.default.publisher(for: UIApplication.userDidTakeScreenshotNotification)) { _ in
+//            print("User took a screenshot!")
+//        }
+        
+//        Text("Hello, World!")
+//            .onReceive(timer) { time in
+//                if self.counter == 5 {
+//                    self.timer.upstream.connect().cancel()
+//                } else {
+//                    print("The time is now \(time)")
+//                }
+//
+//                self.counter += 1
+//            }
+        
+//        VStack {
+//            Text("Hello")
+//            Spacer().frame(height: 100)
+//            Text("World")
+//        }
+//        .contentShape(Rectangle())
+//        .onTapGesture {
+//            print("VStack tapped!")
+//        }
         
 //        ZStack {
 //            Rectangle()
@@ -80,6 +135,14 @@ struct ContentView: View {
 //            .scaleEffect(isDragging ? 1.5 : 1)
 //            .offset(offset)
 //            .gesture(combined)
+    }
+    
+    func withOptionalAnimation<Result>(_ animation: Animation? = .default, _ body: () throws -> Result) rethrows -> Result {
+        if UIAccessibility.isReduceMotionEnabled {
+            return try body()
+        } else {
+            return try withAnimation(animation, body)
+        }
     }
     
     func simpleSuccess() {
