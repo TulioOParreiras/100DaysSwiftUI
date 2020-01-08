@@ -16,6 +16,8 @@
 		FC1FC4B023AA4B97001E4F87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC1FC4AE23AA4B97001E4F87 /* LaunchScreen.storyboard */; };
 		FC1FC4BB23AA4B98001E4F87 /* FlashzillaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1FC4BA23AA4B98001E4F87 /* FlashzillaTests.swift */; };
 		FC1FC4C623AA4B98001E4F87 /* FlashzillaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1FC4C523AA4B98001E4F87 /* FlashzillaUITests.swift */; };
+		FCAEE7FE23C6473F002C026F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAEE7FD23C6473F002C026F /* Card.swift */; };
+		FCC1120723C6650500772004 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1120623C6650500772004 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		FC1FC4C123AA4B98001E4F87 /* FlashzillaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashzillaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1FC4C523AA4B98001E4F87 /* FlashzillaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashzillaUITests.swift; sourceTree = "<group>"; };
 		FC1FC4C723AA4B98001E4F87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCAEE7FD23C6473F002C026F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		FCC1120623C6650500772004 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				FC1FC4A023AA4B94001E4F87 /* AppDelegate.swift */,
+				FCAEE7FD23C6473F002C026F /* Card.swift */,
+				FCC1120623C6650500772004 /* CardView.swift */,
 				FC1FC4A223AA4B94001E4F87 /* SceneDelegate.swift */,
 				FC1FC4A723AA4B94001E4F87 /* ContentView.swift */,
 				FC1FC4A923AA4B97001E4F87 /* Assets.xcassets */,
@@ -272,7 +278,9 @@
 			files = (
 				FC1FC4A623AA4B94001E4F87 /* Flashzilla.xcdatamodeld in Sources */,
 				FC1FC4A123AA4B94001E4F87 /* AppDelegate.swift in Sources */,
+				FCAEE7FE23C6473F002C026F /* Card.swift in Sources */,
 				FC1FC4A823AA4B94001E4F87 /* ContentView.swift in Sources */,
+				FCC1120723C6650500772004 /* CardView.swift in Sources */,
 				FC1FC4A323AA4B94001E4F87 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
