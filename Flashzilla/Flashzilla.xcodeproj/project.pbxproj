@@ -18,6 +18,7 @@
 		FC1FC4C623AA4B98001E4F87 /* FlashzillaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1FC4C523AA4B98001E4F87 /* FlashzillaUITests.swift */; };
 		FCAEE7FE23C6473F002C026F /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAEE7FD23C6473F002C026F /* Card.swift */; };
 		FCC1120723C6650500772004 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1120623C6650500772004 /* CardView.swift */; };
+		FCE1228723C7685C004367CE /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE1228623C7685C004367CE /* EditCards.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		FC1FC4C723AA4B98001E4F87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCAEE7FD23C6473F002C026F /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		FCC1120623C6650500772004 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		FCE1228623C7685C004367CE /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				FC1FC4A023AA4B94001E4F87 /* AppDelegate.swift */,
 				FCAEE7FD23C6473F002C026F /* Card.swift */,
+				FCE1228623C7685C004367CE /* EditCards.swift */,
 				FCC1120623C6650500772004 /* CardView.swift */,
 				FC1FC4A223AA4B94001E4F87 /* SceneDelegate.swift */,
 				FC1FC4A723AA4B94001E4F87 /* ContentView.swift */,
@@ -279,6 +282,7 @@
 				FC1FC4A623AA4B94001E4F87 /* Flashzilla.xcdatamodeld in Sources */,
 				FC1FC4A123AA4B94001E4F87 /* AppDelegate.swift in Sources */,
 				FCAEE7FE23C6473F002C026F /* Card.swift in Sources */,
+				FCE1228723C7685C004367CE /* EditCards.swift in Sources */,
 				FC1FC4A823AA4B94001E4F87 /* ContentView.swift in Sources */,
 				FCC1120723C6650500772004 /* CardView.swift in Sources */,
 				FC1FC4A323AA4B94001E4F87 /* SceneDelegate.swift in Sources */,
